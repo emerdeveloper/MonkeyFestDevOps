@@ -194,7 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MonkeyFestDemo\MonkeyFestDemo.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{24862544-4B9D-425A-A250-13932C4DD8E4}</Project>
       <Name>MonkeyFestDemo</Name>
     </ProjectReference>
   </ItemGroup>

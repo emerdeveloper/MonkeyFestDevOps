@@ -5,6 +5,9 @@ using MonkeyFestDemo.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MonkeyFestDemo.Services;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MonkeyFestDemo
@@ -25,6 +28,15 @@ namespace MonkeyFestDemo
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/SeriesListPage");
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            AppCenter.Start("android=0713e0b3-9b8e-4667-ada7-adae426281dc;" +
+                  "uwp={Your UWP App secret here};" +
+                  "ios={Your iOS App secret here}",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
